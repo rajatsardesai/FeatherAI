@@ -26,7 +26,7 @@ const Hero = () => {
         <div className="hero__image">
           <img src="/arrow-down.svg" alt="Arrow Down" className="object-contain m-auto" />
         </div>
-        <Link href="/ai-write-email" className="hero__email-cta">
+        <Link href="/writemail" className="hero__email-cta">
           <img src="/leaf.svg" alt="Email Writing Button" className="object-contain m-auto" />
         </Link>
       </div>

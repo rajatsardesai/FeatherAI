@@ -1,38 +1,38 @@
 export const sidebarItems = [
     {
         name: "AI Email Write",
-        icon: "/cpu-chip.svg",
+        icon: "/write.svg",
         label: "AI Email Write",
-        link: "/ai-email-write",
+        link: "/writemail",
     },
     {
         name: "AI Email Reply",
-        icon: "/home.svg",
+        icon: "/reply.svg",
         label: "AI Email Reply",
-        link: "/ai-email-write",
+        link: "/emailreply",
     },
     {
         name: "Prompts",
-        icon: "/user.svg",
+        icon: "/prompt.svg",
         label: "Prompts",
-        link: "/ai-email-write",
+        link: "/prompts",
     },
     {
         name: "Profile Settings",
         icon: "/setting.svg",
         label: "Profile Settings",
-        link: "/ai-email-write",
+        link: "/settings",
     },
     {
         name: "Subscription",
         icon: "/subscription.svg",
         label: "Subscription",
-        link: "/ai-email-write",
+        link: "/subscriptions",
     },
     {
         name: "History",
         icon: "/history.svg",
         label: "History",
-        link: "/ai-email-write",
+        link: "/history",
     },
 ]

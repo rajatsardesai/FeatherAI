@@ -20,8 +20,47 @@ import { Slider } from "@/components/ui/slider"
 import { Button } from "@/components/ui/button"
 import { LoaderCircle } from 'lucide-react';
 import { CircleStop } from 'lucide-react';
+import { useContext, useState } from "react"
+import { Context } from "@/context/Context"
 
-const Form = ({ handleSubmit, loading }) => {
+const Form = () => {
+    const [status, setStatus] = useState('');
+    const {
+        onSent,
+        recentPrompt,
+        setRecentPrompt,
+        setPrevPrompts,
+        showResult,
+        loading,
+        resultData,
+        setInput,
+        input,
+        onToggleItems
+    } = useContext(Context);
+
+    // Function to send prompt
+    const handleSubmit = async (formData) => {
+        const prompt = `Write an email with the following parameters:- 
+        Purpose: ${formData.get("purpose")},
+        Subject Line: ${formData.get("subjectline")},
+        Recipient: ${formData.get("recipient")},
+        Sender: ${formData.get("sender")},
+        No of characters of email: ${formData.get("length")},
+        Tone: ${formData.get("tone")},
+        Language: ${formData.get("language")}`;
+
+        try {
+            const response = await onSent(prompt);
+
+            if (response.status === 200) {
+                setStatus('Form submitted successfully');
+            } else {
+                setStatus('Error submitting form');
+            }
+        } catch (e) {
+            console.log("Form is not submitted", e);
+        }
+    };
 
     return (
         <form className="grid h-full items-start border rounded-xl gap-6 overflow-auto lg:p-4 pt-0" action={handleSubmit} >
