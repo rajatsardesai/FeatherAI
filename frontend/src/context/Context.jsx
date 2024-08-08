@@ -17,14 +17,16 @@ const formatResponse = (response) => {
 };
 
 const ContextProvider = (props) => {
-    const [toggleChats, setToggleChats] = useState(false);
-    const [toggleMenu, setToggleMenu] = useState(true);
-    const [input, setInput] = useState("");
-    const [recentPrompt, setRecentPrompt] = useState("");
-    const [prevPrompts, setPrevPrompts] = useState([]);
-    const [showResult, setShowResult] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [onSubmit, setOnSubmit] = useState(false);
     const [resultData, setResultData] = useState("");
+
+    // const [toggleChats, setToggleChats] = useState(false);
+    // const [toggleMenu, setToggleMenu] = useState(true);
+    // const [input, setInput] = useState("");
+    // const [recentPrompt, setRecentPrompt] = useState("");
+    // const [prevPrompts, setPrevPrompts] = useState([]);
+    // const [showResult, setShowResult] = useState(false);
 
     // Function to delay appending each word
     const delayPara = (index, nextWord) => {
@@ -35,11 +37,10 @@ const ContextProvider = (props) => {
 
     // Function to get response from Gemini API and format it
     const onSent = async (prompt) => {
-        setLoading(true);
+        let response;
+        setResultData("");
         try {
-            let response;
             response = await axios.post('/api/generate-prompt', { prompt });
-
             const formattedResponse = formatResponse(response.data);
 
             // Split the response into words and delay appending each word
@@ -47,14 +48,10 @@ const ContextProvider = (props) => {
             words.forEach((word, i) => {
                 delayPara(i, word + " ");
             });
-
-            return formattedResponse;
         } catch (error) {
             console.error("Error fetching response:", error);
-            setLoading(false);
-        } finally {
-            setLoading(false);
         }
+        return response;
     };
 
     // Global Function to toggle items
@@ -69,21 +66,24 @@ const ContextProvider = (props) => {
     // });
 
     const contextValue = {
-        input,
-        setInput,
-        recentPrompt,
-        setRecentPrompt,
-        prevPrompts,
-        setPrevPrompts,
-        showResult,
         loading,
+        setLoading,
         resultData,
         onSent,
-        toggleChats,
-        setToggleChats,
-        toggleMenu,
-        setToggleMenu,
-        onToggleItems,
+        onSubmit,
+        setOnSubmit,
+        // input,
+        // setInput,
+        // recentPrompt,
+        // setRecentPrompt,
+        // prevPrompts,
+        // setPrevPrompts,
+        // showResult,
+        // toggleChats,
+        // setToggleChats,
+        // toggleMenu,
+        // setToggleMenu,
+        // onToggleItems,
         // isDark,
         // setIsDark,
     };

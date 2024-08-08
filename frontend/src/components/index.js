@@ -3,7 +3,6 @@ import Hero from './Hero';
 import Footer from './Footer';
 import CustomButton from './CustomButton';
 import BlurEllipses from './BlurEllipses';
-import Form from './Form';
 import Sidebar from './Sidebar';
 import MobileSidebar from './MobileSidebar';
 
@@ -13,7 +12,6 @@ export {
     Footer,
     CustomButton,
     BlurEllipses,
-    Form,
     Sidebar,
     MobileSidebar,
 }

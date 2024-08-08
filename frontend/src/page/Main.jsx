@@ -1,4 +1,4 @@
-import { Form, MobileSidebar, Sidebar } from '@/components'
+import { MobileSidebar, Sidebar } from '@/components'
 import { sidebarItems } from "@/constants"
 import Link from 'next/link'
 
@@ -32,9 +32,6 @@ const Main = ({ children }) => {
                 <MobileSidebar sidebarItems={sidebarItems} />
                 <main className="grid col-span-full xl:grid-cols-3 gap-4 mx-4 mt-4 lg:px-6 pt-6 lg:gap-6 lg:mt-6 border-t h-full">
                     {children}
-                    <div className="flex flex-col">
-                        <Form />
-                    </div>
                 </main>
             </div>
         </div>

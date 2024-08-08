@@ -1,22 +1,33 @@
 'use client';
 
 import { Context } from "@/context/Context";
-import { Main } from "@/pages";
+import { Skeleton } from "@/components/ui/skeleton"
+import { Main } from "@/page";
 import { useContext } from "react";
+import Form from "./Form";
 
 const page = () => {
     const {
         loading,
         resultData,
+        onSubmit,
     } = useContext(Context);
 
     return (
         <Main>
             <div className="flex flex-col xl:col-span-2 max-h-[1125.7px] overflow-auto sm:[&::-webkit-scrollbar]:[width:6px] [&::-webkit-scrollbar-thumb]:bg-gray-200 [&::-webkit-scrollbar-thumb]:rounded-full">
                 {
-                    loading ? (
+                    onSubmit && (
+                        <img src="/overlay-leaf.svg" alt="Overlay Leaf" width={662} height={1097} />
+                    )
+                }
+                {
+                    !loading ? (
                         <div className="my-2">
-                            Loading....
+                            <Skeleton className="my-2 h-6 w-full bg-slate-100" />
+                            <Skeleton className="my-2 h-6 w-full bg-slate-100" />
+                            <Skeleton className="my-2 h-6 w-full bg-slate-100" />
+                            <Skeleton className="my-2 h-6 w-full bg-slate-100" />
                         </div>
                     ) : (
                         resultData && (
@@ -30,6 +41,9 @@ const page = () => {
                         )
                     )
                 }
+            </div>
+            <div className="flex flex-col">
+                <Form />
             </div>
         </Main>
     )

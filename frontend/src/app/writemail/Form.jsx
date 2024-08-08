@@ -25,30 +25,24 @@ import { Context } from "@/context/Context"
 
 const Form = () => {
     const [status, setStatus] = useState('');
+
     const {
+        loading,
+        setLoading,
         onSent,
+        setOnSubmit,
         recentPrompt,
         setRecentPrompt,
         setPrevPrompts,
         showResult,
-        loading,
         resultData,
         setInput,
         input,
         onToggleItems
     } = useContext(Context);
 
-    // Function to send prompt
-    const handleSubmit = async (formData) => {
-        const prompt = `Write an email with the following parameters:- 
-        Purpose: ${formData.get("purpose")},
-        Subject Line: ${formData.get("subjectline")},
-        Recipient: ${formData.get("recipient")},
-        Sender: ${formData.get("sender")},
-        No of characters of email: ${formData.get("length")},
-        Tone: ${formData.get("tone")},
-        Language: ${formData.get("language")}`;
-
+    const handleAsyncSubmit = async (prompt) => {
+        setLoading(true);
         try {
             const response = await onSent(prompt);
 
@@ -59,7 +53,24 @@ const Form = () => {
             }
         } catch (e) {
             console.log("Form is not submitted", e);
+        } finally {
+            setLoading(false);
         }
+    };
+
+    // Function to send prompt
+    const handleSubmit = (formData) => {
+        const prompt = `Write an email with the following parameters:-
+        Purpose: ${formData.get("purpose")},
+        Subject Line: ${formData.get("subjectline")},
+        Recipient: ${formData.get("recipient")},
+        Sender: ${formData.get("sender")},
+        No of characters of email: ${formData.get("length")},
+        Tone: ${formData.get("tone")},
+        Language: ${formData.get("language")}`;
+
+        setOnSubmit(true);
+        handleAsyncSubmit(prompt);
     };
 
     return (
