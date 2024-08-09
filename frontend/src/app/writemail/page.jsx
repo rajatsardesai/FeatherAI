@@ -17,17 +17,20 @@ const page = () => {
         <Main>
             <div className="flex flex-col xl:col-span-2 max-h-[1125.7px] overflow-auto sm:[&::-webkit-scrollbar]:[width:6px] [&::-webkit-scrollbar-thumb]:bg-gray-200 [&::-webkit-scrollbar-thumb]:rounded-full">
                 {
-                    onSubmit && (
+                    !onSubmit && (
                         <img src="/overlay-leaf.svg" alt="Overlay Leaf" width={662} height={1097} />
                     )
                 }
                 {
-                    !loading ? (
+                    loading ? (
                         <div className="my-2">
-                            <Skeleton className="my-2 h-6 w-full bg-slate-100" />
-                            <Skeleton className="my-2 h-6 w-full bg-slate-100" />
-                            <Skeleton className="my-2 h-6 w-full bg-slate-100" />
-                            <Skeleton className="my-2 h-6 w-full bg-slate-100" />
+                            <Skeleton className="h-5 w-full bg-slate-200" />
+                            <Skeleton className="my-3 h-5 w-full bg-slate-200" />
+                            <Skeleton className="my-3 h-5 w-full bg-slate-200" />
+                            <Skeleton className="my-3 h-5 w-full bg-slate-200" />
+                            <Skeleton className="my-3 h-5 w-full bg-slate-200" />
+                            <Skeleton className="my-3 h-5 w-full bg-slate-200" />
+                            <Skeleton className="my-3 h-5 w-full bg-slate-200" />
                         </div>
                     ) : (
                         resultData && (

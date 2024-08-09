@@ -25,6 +25,7 @@ import { Context } from "@/context/Context"
 
 const Form = () => {
     const [status, setStatus] = useState('');
+    const [sliderValue, setSliderValue] = useState(0);
 
     const {
         loading,
@@ -95,12 +96,12 @@ const Form = () => {
                 <div className="grid gap-3">
                     <div className="flex justify-between">
                         <Label htmlFor="length" className="text-base font-medium">Length</Label>
-                        <Input type="number" placeholder="5000" className="w-16" />
+                        <Input type="text" value={sliderValue} className="w-16" />
                     </div>
                     {/* <Slider id="length" name="length" defaultValue={[200]} max={5000} step={1} onValueChange={(vals) => {
                         console.log(vals[0]);
                     }} /> */}
-                    <Slider id="length" name="length" defaultValue={[200]} max={5000} step={1} />
+                    <Slider id="length" name="length" defaultValue={[0]} max={5000} step={1} onChange={(e) => setSliderValue(e.target.value)}  />
                 </div>
                 <div className="grid gap-3">
                     <Label htmlFor="tone" className="text-base font-medium">Tone</Label>

@@ -1,37 +1,44 @@
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
+import { faTerminal } from '@fortawesome/free-solid-svg-icons';
+import { faSliders } from '@fortawesome/free-solid-svg-icons';
+import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
+import { faClockRotateLeft } from '@fortawesome/free-solid-svg-icons';
+
 export const sidebarItems = [
     {
         name: "AI Email Write",
-        icon: "/write.svg",
+        icon: faPenToSquare,
         label: "AI Email Write",
         link: "/writemail",
     },
     {
         name: "AI Email Reply",
-        icon: "/reply.svg",
+        icon: faCommentDots,
         label: "AI Email Reply",
         link: "/emailreply",
     },
     {
         name: "Prompts",
-        icon: "/prompt.svg",
+        icon: faTerminal,
         label: "Prompts",
         link: "/prompts",
     },
     {
         name: "Profile Settings",
-        icon: "/setting.svg",
+        icon: faSliders,
         label: "Profile Settings",
         link: "/settings",
     },
     {
         name: "Subscription",
-        icon: "/subscription.svg",
+        icon: faCreditCard,
         label: "Subscription",
         link: "/subscriptions",
     },
     {
         name: "History",
-        icon: "/history.svg",
+        icon: faClockRotateLeft,
         label: "History",
         link: "/history",
     },
