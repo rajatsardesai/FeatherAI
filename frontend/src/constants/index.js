@@ -42,4 +42,8 @@ export const sidebarItems = [
         label: "History",
         link: "/history",
     },
-]
+];
+
+export const tones = ["Professional", "Casual", "Funny", "Excited"]
+
+export const languages = ["English", "Hindi", "Spanish", "French", "Standard Arabic", "Mandarin Chinese", "Portugese", "Russian", "Japanese"]

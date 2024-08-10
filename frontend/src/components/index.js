@@ -5,6 +5,9 @@ import CustomButton from './CustomButton';
 import BlurEllipses from './BlurEllipses';
 import Sidebar from './Sidebar';
 import MobileSidebar from './MobileSidebar';
+import SelectInput from './inputs/SelectInput';
+import TextInput from './inputs/TextInput';
+import TextareaInput from './inputs/TextareaInput';
 
 export {
     Navbar,
@@ -14,4 +17,7 @@ export {
     BlurEllipses,
     Sidebar,
     MobileSidebar,
+    SelectInput,
+    TextInput,
+    TextareaInput,
 }

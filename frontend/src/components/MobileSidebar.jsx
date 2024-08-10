@@ -1,13 +1,21 @@
 'use client'
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { Sheet, SheetContent, SheetTitle, SheetDescription, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const MobileSidebar = ({ sidebarItems }) => {
     const pathname = usePathname();
+    const [selectedSidebarItem, setSelectedSidebarItem] = useState(null);
+
+    useEffect(() => {
+        const foundItem = sidebarItems.find(item => pathname.includes(item.link));
+        setSelectedSidebarItem(foundItem);
+    }, [pathname, sidebarItems]);
 
     return (
         <header className="flex items-center gap-4 bg-muted/40 px-4 lg:px-6 pt-7">
@@ -23,6 +31,9 @@ const MobileSidebar = ({ sidebarItems }) => {
                     </Button>
                 </SheetTrigger>
                 <SheetContent side="left" className="flex flex-col bg-white">
+                    <SheetTitle>
+                        <SheetDescription>Menu</SheetDescription>
+                    </SheetTitle>
                     <nav className="grid gap-2 text-base font-medium">
                         <div className="flex h-14 items-center px-4 py-5 lg:h-[60px] lg:px-6">
                             <Link href="/" className="flex justify-center items-center gap-2">
@@ -48,7 +59,7 @@ const MobileSidebar = ({ sidebarItems }) => {
                                         href={item.link}
                                         className={`flex items-center gap-3 rounded-lg px-4 py-5 transition-all text-gray-300/40 hover:text-white hover:bg-green ${pathname.slice(0, -1) === item.link ? 'bg-green text-white' : ''}`}
                                     >
-                                        <img src={item.icon} alt={item.label} />
+                                        <FontAwesomeIcon icon={item.icon} />
                                         {item.name}
                                     </Link>
                                 ))
@@ -57,7 +68,9 @@ const MobileSidebar = ({ sidebarItems }) => {
                     </nav>
                 </SheetContent>
             </Sheet>
-            <h3 className="text-3xl font-bold">AI Email Write </h3>
+            {selectedSidebarItem && (
+                <h3 className="text-xl md:text-3xl font-bold">{selectedSidebarItem.name}</h3>
+            )}
         </header>
     )
 }

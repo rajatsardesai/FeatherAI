@@ -16,11 +16,12 @@ import { useContext, useState } from "react";
 import { Context } from "@/context/Context";
 import { languages, tones } from "@/constants";
 import { useFormik } from 'formik';
-import { schema } from "@/app/writemail/schema";
 import { SelectInput, TextareaInput, TextInput } from "@/components";
+import { schema } from "@/app/emailreply/schema";
 
 const initialValues = {
-    purpose: "",
+    receivedemail: "",
+    responsegoal: "",
     subjectline: "",
     recipient: "",
     sender: "",
@@ -37,14 +38,6 @@ const Form = () => {
         setLoading,
         onSent,
         setOnSubmit,
-        recentPrompt,
-        setRecentPrompt,
-        setPrevPrompts,
-        showResult,
-        resultData,
-        setInput,
-        input,
-        onToggleItems
     } = useContext(Context);
 
     const handleAsyncSubmit = async (prompt) => {
@@ -67,14 +60,15 @@ const Form = () => {
     // Function to send prompt
     const handleFormSubmit = (values) => {
         const prompt = `Write an email with the following parameters:-
-        The overall goal or intention of the email (subject): ${values.purpose},
+        The complete content of the incoming email: ${values.receivedemail},
+        The desired outcome or objective of the response: ${values.responsegoal},
         The subject of the email: ${values.subjectline},
         The intended recipient of the email: ${values.recipient},
         The sender of the email: ${values.sender},
         The maximum number of characters allowed in the email body: ${values.characters},
         The desired tone of the email: ${values.tone},
         The language in which the email should be written: ${values.language}`;
-        
+
         setOnSubmit(true);
         handleAsyncSubmit(prompt);
     };
@@ -91,7 +85,10 @@ const Form = () => {
         <form className="grid h-full items-start border rounded-xl gap-6 overflow-auto lg:p-4 pt-0" onSubmit={handleSubmit} >
             <fieldset className="grid gap-6 rounded-lg p-4">
                 <div className="grid gap-3">
-                    <TextareaInput value={values.purpose} handleChange={handleChange} touched={touched} errors={errors} labelName="Purpose" optional={false} inputType="purpose" placeholder="Example: I am writing to propose a new marketing campaign that I believe will be effective for your business." maxCharacters="3000" />
+                    <TextareaInput value={values.receivedemail} handleChange={handleChange} touched={touched} errors={errors} labelName="Received Email" optional={false} inputType="receivedemail" placeholder="Example: Dear sir/ma'am, I will be taking a break from my work. Thank you" maxCharacters="3000" />
+                </div>
+                <div className="grid gap-3">
+                    <TextareaInput value={values.responsegoal} handleChange={handleChange} touched={touched} errors={errors} labelName="Response Goal" optional={false} inputType="responsegoal" placeholder="Acknowledge this Email" maxCharacters="3000" />
                 </div>
                 <div className="grid gap-3">
                     <TextInput value={values.subjectline} handleChange={handleChange} touched={touched} errors={errors} labelName="Subject Line" optional={false} inputType="subjectline" placeholder="Example: Introduction to New Client, Proposal for Marketing Camp..." maxCharacters="100" />
