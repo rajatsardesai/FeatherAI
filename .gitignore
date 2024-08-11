@@ -12,6 +12,8 @@
 # next.js
 # /frontend/.next/
 /frontend/out/
+/frontend/.next/.trace
+/frontend/.next/trace
 
 # production
 /frontend/build

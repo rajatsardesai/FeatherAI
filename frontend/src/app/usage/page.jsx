@@ -19,7 +19,7 @@ const Page = () => {
                         </h1>
                         <div className="w-[80px] h-[7px] bg-green mx-auto"></div>
                         <p className="hero__subtitle mt-11 mb-12">
-                            Watch a demo of how AirderEase works.
+                            Watch a demo of how FeatherAI works.
                         </p>
                         <iframe
                             width="1006"

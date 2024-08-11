@@ -1,4 +1,4 @@
-// File: D:\users\Rzt\Documents\Web Development Practice\airderease\frontend\src\app\prompts\page.jsx
+// File: D:\users\Rzt\Documents\Web Development Practice\featherai\frontend\src\app\prompts\page.jsx
 import * as entry from '../../../../src/app/prompts/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

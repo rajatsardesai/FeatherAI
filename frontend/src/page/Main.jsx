@@ -12,14 +12,14 @@ const Main = ({ children }) => {
                             <div className="flex justify-center items-center bg-green w-8 h-8 rounded-lg">
                                 <img
                                     src="/leaf.svg"
-                                    alt="AirderEase Logo"
+                                    alt="FeatherAI Logo"
                                     width={25}
                                     height={25}
                                 />
                             </div>
                             <span className="text-xl font-normal">
-                                Airder
-                                <span className="font-bold">Ease</span>
+                                Feather
+                                <span className="font-bold">AI</span>
                             </span>
                         </Link>
                     </div>
