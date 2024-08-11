@@ -11,36 +11,42 @@ export const sidebarItems = [
         icon: faPenToSquare,
         label: "AI Email Write",
         link: "/writemail",
+        disabled: false,
     },
     {
         name: "AI Email Reply",
         icon: faCommentDots,
         label: "AI Email Reply",
         link: "/emailreply",
+        disabled: false,
     },
     {
         name: "Prompts",
         icon: faTerminal,
         label: "Prompts",
         link: "/prompts",
+        disabled: true,
     },
     {
         name: "Profile Settings",
         icon: faSliders,
         label: "Profile Settings",
         link: "/settings",
+        disabled: true,
     },
     {
         name: "Subscription",
         icon: faCreditCard,
         label: "Subscription",
         link: "/subscriptions",
+        disabled: true,
     },
     {
         name: "History",
         icon: faClockRotateLeft,
         label: "History",
         link: "/history",
+        disabled: true,
     },
 ];
 

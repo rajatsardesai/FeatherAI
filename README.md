@@ -1,50 +1,57 @@
-# Google Gemma - AI Chatbot
+# Feather AI - Email Writing Assistant
 
-Google Gemma is an AI chatbot built using the Google Gemini API and developed with React, Vite, and Node.js. It provides a seamless conversational experience powered by cutting-edge AI technology.
+Feather AI is an advanced email writing assistant built using the powerful Google Gemini API for the #buildwithgemini competition. It revolutionizes the way you write emails, offering a smarter, faster, and more personalized experience. Whether you're crafting quick messages, setting the ideal tone, or creating detailed responses, Feather AI ensures that every email is polished, effective, and tailored just for you.
 
 ## Features
-- **Minimizable Sidebar Menu**: Easily navigate through the app with a sidebar menu that can be minimized for a clutter-free interface.
-- **Dark Mode**: Enjoy a comfortable browsing experience even in low-light environments with the dark mode feature.
-- **Saved User Theme Preference**: Google Gemma remembers your preferred theme setting, storing the dark mode state in local storage for seamless continuity across sessions.
-- **Node Backend for Secure API Key Storage**: Ensure security by storing API keys securely on the server-side with a Node.js backend.
-- **Chat History**: Keep track of your conversations with Google Gemma using the chat history feature, which stores conversations locally for reference.
+- **AI-Powered Email Generation**: Automatically create well-crafted emails based on your input.
+- **Customizable Tone**: Choose from a variety of tones, including friendly, professional, casual, and more.
+- **Adjustable Email Length**: Set the length of your email to be concise or detailed.
+- **Smart Reply Suggestions**: Get intelligent and contextually relevant reply options.
+- **Multi-Language Support**: Write emails in different languages with ease.
+- **Regenerate Option**: Regenerate the email as many times as needed until it's perfect.
+- **User-Friendly Interface**: An intuitive dashboard for simple and efficient email creation.
+- **Integration Capabilities**: Seamlessly integrates with your existing email platforms.
 
 ## Project Details
-Google Gemma leverages the following technologies:
+Feather AI leverages the following technologies:
 
-- React: Frontend framework for building dynamic user interfaces.
-- Vite: Lightning-fast frontend build tooling.
-- Node.js: JavaScript runtime for building scalable server-side applications.
+- **Google Gemini API**: For advanced AI-powered email generation.
+- **Next.js**: Frontend framework for building dynamic user interfaces.
+- **Node.js**: JavaScript runtime for building scalable server-side applications.
 
 ## Steps to Run App
 1. Clone the repository:
-``` shell 
-git clone https://github.com/your_username/google-gemma.git
-```
-2. Navigate to the project directory: 
-``` shell 
-cd google-gemma
-```
+    ```shell
+    git clone https://github.com/rajatsardesai/FeatherAI.git
+    ```
+2. Navigate to the project directory:
+    ```shell
+    cd featherAI
+    ```
 3. Install dependencies:
-``` shell
-npm install
-```
-4. Start backend server
-``` shell
-npm start
-```
-5. Start frontend
-``` shell
-cd frontend && npm run dev
-```
-6. Open your browser and visit `http://localhost:5173` to view Google Gemma in action.
+    ```shell
+    npm install
+    ```
+4. Start backend server:
+    ```shell
+    cd backend && node server.js
+    ```
+4. Install dependencies:
+    ```shell
+    cd frontend && npm install
+    ```
+5. Start frontend:
+    ```shell
+    cd frontend && npm run dev
+    ```
+6. Open your browser and visit `http://localhost:3000` to view Feather AI in action.
 
 ## Contribution Opportunity
-I welcome contributions to Google Gemma! Here are a few areas where you can contribute:
-- Enhancing the chatbot's AI capabilities.
+Contributions to Feather AI are welcome! Here are a few areas where you can contribute:
+- Enhancing the AI email generation capabilities.
 - Improving the UI/UX design.
-- Adding support for additional features like voice input, image recognition or multi-language support.
-- Optimizing performance.
+- Adding support for additional features like voice input, email scheduling, or advanced analytics.
+- Optimizing performance and integration capabilities.
 
 ## Contribution Guidelines
 1. Fork the repository.
@@ -54,4 +61,7 @@ I welcome contributions to Google Gemma! Here are a few areas where you can cont
 5. Submit a pull request with a clear description of your changes.
 
 ## Support
-If you encounter any issues or have questions regarding Google Gemma, feel free to [open an issue](https://github.com/rajatsardesai/Google-Gemma/issues). I am here to help!
+If you encounter any issues or have questions regarding Feather AI, feel free to [open an issue](https://github.com/your_username/featherAI/issues). I'm here to help!
+
+## Tags
+#buildwithgemini #google #googlegemini #gemini #geminiapi #geminiapicompetition #googlegeminiapi

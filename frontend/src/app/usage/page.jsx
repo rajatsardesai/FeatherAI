@@ -24,10 +24,10 @@ const Page = () => {
                         <iframe
                             width="1006"
                             height="569"
-                            src="https://www.youtube.com/embed/ipePsVJmAzI"
-                            title="YouTube video player"
+                            src="/how-it-works.mp4"
+                            title="How it works"
                             frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen
                         ></iframe>
                     </div>
