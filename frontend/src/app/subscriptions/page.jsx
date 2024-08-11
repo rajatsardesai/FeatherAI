@@ -1,6 +1,6 @@
 import { Main } from "@/page"
 
-const page = () => {
+const Page = () => {
   return (
     <Main>
       <div className="flex flex-col justify-center items-center xl:col-span-2 max-h-[1125.7px] overflow-auto sm:[&::-webkit-scrollbar]:[width:6px] [&::-webkit-scrollbar-thumb]:bg-gray-200 [&::-webkit-scrollbar-thumb]:rounded-full">
@@ -10,4 +10,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

@@ -7,7 +7,7 @@ const Main = ({ children }) => {
         <div className="grid w-full max-lg:h-dvh h-screen md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] p-5">
             <div className="hidden border rounded-xl md:block p-5">
                 <div className="flex h-full max-h-screen flex-col gap-2 fixed">
-                    <div className="flex h-14 justify-center items-center px-4 py-5 lg:h-[60px] lg:px-12">
+                    <div className="flex justify-center items-center px-4 py-2 lg:px-12">
                         <Link href="/" className="flex justify-center items-center gap-2">
                             <div className="flex justify-center items-center bg-green w-8 h-8 rounded-lg">
                                 <img

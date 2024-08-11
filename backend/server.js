@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 const PORT = process.env.PORT;
 
 // Serve the static files from the frontend build directory
-// app.use(express.static(path.join(__dirname, '../frontend/dist')));
+app.use(express.static(path.join(__dirname, '../frontend/next/public')));
 
 // Endpoint to handle POST requests for generating prompt
 app.post('/api/generate-prompt', async (req, res) => {
@@ -31,9 +31,9 @@ app.post('/api/generate-prompt', async (req, res) => {
 });
 
 // Catch-all route to serve the frontend app
-// app.get('*', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, '../frontend/dist/index.html'));
-// });
+app.get('*', (req, res) => {
+    return handle(req, res);
+});
 
 // Start the server
 app.listen(PORT, () => {

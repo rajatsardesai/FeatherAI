@@ -7,8 +7,8 @@ import { Main } from "@/page";
 import { useContext, useEffect, useState } from "react";
 import Form from "./Form";
 
-const page = () => {
-    const [isMobile] = useState(window.innerWidth < 1280);
+const Page = () => {
+    const [isMobile, setIsMobile] = useState(false);
     const [selectedTab, setSelectedTab] = useState('form');
 
     const {
@@ -16,6 +16,12 @@ const page = () => {
         resultData,
         onSubmit,
     } = useContext(Context);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setIsMobile(window.innerWidth < 1280);
+        }
+    }, []);
 
     useEffect(() => {
         if (resultData.toString().length > 0) {
@@ -113,4 +119,4 @@ const page = () => {
     )
 }
 
-export default page;
+export default Page;

@@ -4,11 +4,12 @@ import { Context } from "@/context/Context";
 import { Skeleton } from "@/components/ui/skeleton"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Main } from "@/page";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Form from "./Form";
 
-const page = () => {
-    const [isMobile] = useState(window.innerWidth < 1280);
+const Page = () => {
+    const [isMobile, setIsMobile] = useState(false);
+    const [selectedTab, setSelectedTab] = useState('form');
 
     const {
         loading,
@@ -16,10 +17,24 @@ const page = () => {
         onSubmit,
     } = useContext(Context);
 
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setIsMobile(window.innerWidth < 1280);
+        }
+    }, []);
+
+    useEffect(() => {
+        if (resultData.toString().length > 0) {
+            setSelectedTab('result');
+        } else {
+            setSelectedTab('form');
+        }
+    }, [resultData]);
+
     return (
         <Main>
             {isMobile ? (
-                <Tabs defaultValue="form">
+                <Tabs value={selectedTab} onValueChange={setSelectedTab}>
                     <TabsList className="w-full bg-gray-200">
                         <TabsTrigger value="form" className="w-full">Form</TabsTrigger>
                         <TabsTrigger value="result" className="w-full">Result</TabsTrigger>
@@ -104,4 +119,4 @@ const page = () => {
     )
 }
 
-export default page;
+export default Page;

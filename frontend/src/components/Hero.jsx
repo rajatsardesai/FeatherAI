@@ -16,12 +16,15 @@ const Hero = () => {
           With its powerful AI technology, the app can assist with everything from suggestions for improving your writing.
         </p>
         <div className="flex flex-col md:flex-row justify-center items-center gap-3">
-          <CustomButton
-            title="Get started"
-            containerStyle="bg-green text-white text-lg py-3 px-8 border-[0.2px] border-green outline-none rounded-full" />
-          <CustomButton
-            title="How it works"
-            containerStyle="bg-transparent text-lg py-3 px-8 border-[0.2px] border-black outline-none rounded-full" />
+          <Link href="/writemail">
+            <CustomButton
+              title="Get started"
+              containerStyle="bg-green text-white text-lg py-3 px-8 border-[0.2px] border-green outline-none rounded-full" /></Link>
+          <Link href="/usage">
+            <CustomButton
+              title="How it works"
+              containerStyle="bg-transparent text-lg py-3 px-8 border-[0.2px] border-black outline-none rounded-full" />
+          </Link>
         </div>
         <div className="hero__image">
           <img src="/arrow-down.svg" alt="Arrow Down" className="object-contain m-auto" />

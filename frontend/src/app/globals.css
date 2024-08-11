@@ -52,7 +52,7 @@
 
 /* START: Hero styles */
 .hero {
-  @apply flex justify-center items-center relative z-0 max-w-[1440px] h-screen mx-auto;
+  @apply flex justify-center items-center relative z-0 max-w-[1440px] mx-auto;
 }
 
 .hero__title {

@@ -3,14 +3,16 @@ import { BlurEllipses, Footer, Navbar } from "@/components";
 
 export default function Home() {
   return (
-    <main className="bg-green-gradient/10">
-      <div className="absolute overflow-hidden w-full h-screen">
+    <main className="bg-green-gradient/10 min-h-screen">
+      <div className="absolute overflow-hidden w-full h-dvh -z-[50]">
         <BlurEllipses className="top-[-380px] left-[-417px]" />
         <BlurEllipses className="bottom-[217px] right-[-517px]" />
       </div>
-      <Navbar />
-      <Hero />
-      <Footer />
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <Hero />
+        <Footer />
+      </div>
     </main>
   );
 }
