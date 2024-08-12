@@ -28,23 +28,32 @@ Feather AI leverages the following technologies:
     ```shell
     cd featherAI
     ```
-3. Install dependencies:
+3. Create a `.env` file at the root of the project and add your environment variables:
     ```shell
-    npm install
+    touch .env
     ```
-4. Start backend server:
-    ```shell
-    cd backend && node server.js
+    Populate the `.env` file with the following variables:
+    ```plaintext
+    APIKEY=YOUR_API_KEY
+    PORT=5000
     ```
 4. Install dependencies:
     ```shell
+    npm install
+    ```
+5. Start backend server:
+    ```shell
+    cd backend && node server.js
+    ```
+6. Install dependencies:
+    ```shell
     cd frontend && npm install
     ```
-5. Start frontend:
+7. Start frontend:
     ```shell
     cd frontend && npm run dev
     ```
-6. Open your browser and visit `http://localhost:3000` to view Feather AI in action.
+8. Open your browser and visit `http://localhost:3000` to view Feather AI in action.
 
 ## Contribution Opportunity
 Contributions to Feather AI are welcome! Here are a few areas where you can contribute:
